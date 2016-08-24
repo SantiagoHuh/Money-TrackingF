@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Framework Básico</title>
+    <link rel="stylesheet" href="<?php echo APP_URL; ?>views/layouts/default/css/normalize.min.css">
+    <link rel="stylesheet" href="<?php echo APP_URL; ?>views/layouts/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo APP_URL; ?>views/layouts/default/css/main.css">
+    
+    <script src="<?php echo APP_URL; ?>views/layouts/default/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<style>
+  nav li a{
+  text-decoration: none;
+  padding: 5px;
+  color: ;
+  font-weight: bold;
+  }
+
+  nav li a:hover{
+    background-color: #00BFFF;
+    border-radius: 5px;
+  }
+</style>
+<body>
+   <div class="container">
+       <div class="row">
+           <header>
+               <div class="col-md-6"><h1>Money Tracking</h1></div>
+               <div class="col-md-6"><?php
+                    if (isset($_SESSION['username'])): ?>
+	                   <h4>Hola <?php echo $_SESSION['username']; ?></h4>
+	                   <a href="<?php echo APP_URL; ?>users/logout">Logout</a>
+                       <?php endif; ?></div>
+           </header>
+       </div>
+       <div class="row">
+           <div class="col-md-12">
+               <nav>
+                   <ul>
+                       <li><a href="<?php echo APP_URL; ?>">Home</a></li>
+                       <li><a href="<?php echo APP_URL; ?>pages/index">Pages</a></li>
+                       <li><a href="<?php echo APP_URL; ?>users/add">Users</a></li>
+                       <li><a href="<?php echo APP_URL; ?>categories/add">Categories</a></li>
+                       <li><a href="<?php echo APP_URL; ?>transactions/add">Transactions</a></li>
+                       <li><a href="<?php echo APP_URL; ?>accounts/add">Accounts</a></li>
+                       <li><a href="<?php echo APP_URL; ?>users/logout"></a></li>
+                   </ul>
+               </nav>
+           </div>
+       </div>
